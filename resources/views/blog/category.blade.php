@@ -65,10 +65,9 @@
 
                   @empty
                   <h3 class="text-center">
-                        There is no post under "
-                        <strong>{{ $category->name }}</strong>" category in our blog.<br />
+                        Query for: <strong>{{ request()->query('search') }}</strong> in this page cannot be found.<br />
 
-                  </h3>
+                   </h3>
                   @endforelse
                 </div>
                 {{ $posts->appends(['search' => request()->query('search')])->links()}}

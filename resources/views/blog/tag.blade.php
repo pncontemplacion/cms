@@ -65,8 +65,8 @@
 
                   @empty
                   <h3 class="text-center">
-                   There is no post with a "
-                  <strong>{{ $tag->name }}</strong>" tag in our blog.<br />
+                   Query for:
+                  <strong>{{ request()->query('search') }}</strong> in this page cannot be found.<br />
 
                   </h3>
                   @endforelse

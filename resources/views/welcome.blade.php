@@ -65,7 +65,7 @@
 
                   @empty
                   <h3 class="text-center">
-                    <strong>{{ request()->query('search') }}</strong>" not found in our posts.<br />
+                    Query for: <strong>{{ request()->query('search') }}</strong> cannot be found.<br />
                   </h3>
                   @endforelse
 

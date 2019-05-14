@@ -126,7 +126,8 @@
 
 <script>
    flatpickr('#published_at', {
-       enableTime: true
+       enableTime: true,
+       enableSeconds: true
    })
 
    $(document).ready(function() {

@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Blog
+    Tag {{ $tag->name }}
 @endsection
 
 @section('header')
@@ -14,7 +14,7 @@
                 <div class="row">
                  <div class="col-md-8 mx-auto">
 
-                    <h1>What's New?</h1>
+                    <h1>{{ $tag->name }}</h1>
                     <p class="lead-2 opacity-90 mt-6">Check our latest posts for update.</p>
 
                  </div>
@@ -65,11 +65,11 @@
 
                   @empty
                   <h3 class="text-center">
-                    <strong>{{ request()->query('search') }}</strong>" not found in our posts.<br />
+                   There is no post with a "
+                  <strong>{{ $tag->name }}</strong>" tag in our blog.<br />
+
                   </h3>
                   @endforelse
-
-
                 </div>
                 {{ $posts->appends(['search' => request()->query('search')])->links()}}
               </div>

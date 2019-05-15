@@ -21,13 +21,12 @@ Route::get('blog/categories/{category}', [PostsController::class, 'category'])->
 
 Route::get('blog/tags/{tag}', [PostsController::class, 'tag'])->name('blog.tag');
 
-Auth::routes();
-
+Auth::routes(['verify' => true]);
 
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
     Route::resource('categories', 'CategoriesController');
 
